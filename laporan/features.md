@@ -1,21 +1,21 @@
 # Features this App
 
-Nama Aplikasi :
+Nama Aplikasi : ASINPEDAS
 
-Kelompok :
+Kelompok : diskominfo
 
 ## Pengguna
 
-1.
-2.
-3.
+1. Admin
+2. User
+
 
 ## Menu
 
-**Untuk Pengguna 1()**
+**Untuk Pengguna 1(Admin)**
 
-- menu
-- menu
+- login
+- Data Karyawan
 - dst.
 
 **Untuk Pengguna 2()**
