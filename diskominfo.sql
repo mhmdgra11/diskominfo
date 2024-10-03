@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Sep 2024 pada 20.07
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.1.25
+-- Generation Time: Oct 03, 2024 at 09:04 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `foto`
+-- Table structure for table `foto`
 --
 
 CREATE TABLE `foto` (
@@ -32,10 +32,10 @@ CREATE TABLE `foto` (
   `tanggal` date NOT NULL,
   `id_karyawan` int(9) NOT NULL,
   `foto` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `foto`
+-- Dumping data for table `foto`
 --
 
 INSERT INTO `foto` (`id_foto`, `tanggal`, `id_karyawan`, `foto`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `foto` (`id_foto`, `tanggal`, `id_karyawan`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `karyawan`
+-- Table structure for table `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -53,10 +53,10 @@ CREATE TABLE `karyawan` (
   `nip` int(6) NOT NULL,
   `alamat` text NOT NULL,
   `jabatan` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `karyawan`
+-- Dumping data for table `karyawan`
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `nama`, `nip`, `alamat`, `jabatan`) VALUES
@@ -65,7 +65,7 @@ INSERT INTO `karyawan` (`id_karyawan`, `nama`, `nip`, `alamat`, `jabatan`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `laporan`
+-- Table structure for table `laporan`
 --
 
 CREATE TABLE `laporan` (
@@ -73,10 +73,10 @@ CREATE TABLE `laporan` (
   `nama` varchar(30) NOT NULL,
   `status` enum('selesai','delay','batal') NOT NULL,
   `lampiran` blob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `laporan`
+-- Dumping data for table `laporan`
 --
 
 INSERT INTO `laporan` (`id_laporan`, `nama`, `status`, `lampiran`) VALUES
@@ -86,17 +86,17 @@ INSERT INTO `laporan` (`id_laporan`, `nama`, `status`, `lampiran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `username` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id`, `username`, `password`) VALUES
@@ -105,132 +105,135 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `perjalanan`
+-- Table structure for table `perjalanan`
 --
 
 CREATE TABLE `perjalanan` (
-  `id_perjalanan` int(9) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `jenis_tugas` enum('giat_liputan','seminar','sosialisasi','rapat') NOT NULL,
-  `tanggal&waktu` datetime NOT NULL,
-  `tempat` text NOT NULL,
-  `keterangan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id_perjalanan` int(20) NOT NULL,
+  `tempat` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL,
+  `waktu` time NOT NULL,
+  `jenis_tugas` varchar(30) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `lampiran` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `perjalanan`
+-- Dumping data for table `perjalanan`
 --
 
-INSERT INTO `perjalanan` (`id_perjalanan`, `nama`, `jenis_tugas`, `tanggal&waktu`, `tempat`, `keterangan`) VALUES
-(123456797, '9999', '', '2024-09-21 00:00:00', 'sipaa', 'liput giat sekdan kab sumedang'),
-(123456798, '55555', '', '2024-09-21 00:00:00', 'Alfiyyah', 'rapat bupati se jawa barat'),
-(123456799, '111213', '', '2024-09-21 00:00:00', 'abang', 'rapat presiden'),
-(123456800, '4444', '', '2024-09-21 00:00:00', 'ibay', 'liput giat gubernur');
+INSERT INTO `perjalanan` (`id_perjalanan`, `tempat`, `tanggal`, `waktu`, `jenis_tugas`, `keterangan`, `status`, `lampiran`) VALUES
+(123456, 'Pemenrintaha Daerah Kab.Sumedang', '2024-10-03', '11:22:33', 'giat_liputan', 'sosialisasi gempur roko ilegal', 'selesai', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `id_user` int(9) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
+  `jabatan` varchar(20) NOT NULL,
+  `bidang` varchar(20) NOT NULL,
+  `telp` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `level` varchar(30) NOT NULL,
   `nip` varchar(9) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `level`, `nip`) VALUES
-(9, 'sipa', '0708', 'pegawai', '202400'),
-(10, 'Alfiyyah', '021126', 'pegawai', '021126'),
-(11, 'Muhamad Agra', '1203', 'Admin', '120320204'),
-(12, '', '$2y$10$ZL8AXYEEcnsaIqqjDlXI8eW', 'admin', '');
+INSERT INTO `user` (`id_user`, `username`, `password`, `jabatan`, `bidang`, `telp`, `email`, `level`, `nip`) VALUES
+(10, 'Alfiyah', '6789', 'PEGAWAI', 'PERSANDIAN', '08523648978', 'alfi@gmail.com', 'pegawai', '9876'),
+(11, 'Muhamad Agra Rizkia Mulyana', '1203', 'KADIS', 'KOMUNIKASI', '082115402372', 'muhamad.agra70@smk.belajar.id', 'admin', '12032024'),
+(56, 'Muhamad Iqbal Maulana', '3456', 'KABID', 'SERVER', '08657989456', 'iqbal@gmail.com', 'admin', '456789'),
+(123, 'Aldevaro', '123', 'SEKDIS', 'UMUM', '085215464', 'aldevaro@gmail.com', 'pegawai', '123456789');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `foto`
+-- Indexes for table `foto`
 --
 ALTER TABLE `foto`
   ADD PRIMARY KEY (`id_foto`);
 
 --
--- Indeks untuk tabel `karyawan`
+-- Indexes for table `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`id_karyawan`),
   ADD UNIQUE KEY `foto` (`id_karyawan`,`nama`);
 
 --
--- Indeks untuk tabel `laporan`
+-- Indexes for table `laporan`
 --
 ALTER TABLE `laporan`
   ADD PRIMARY KEY (`id_laporan`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `perjalanan`
+-- Indexes for table `perjalanan`
 --
 ALTER TABLE `perjalanan`
   ADD PRIMARY KEY (`id_perjalanan`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `foto`
+-- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
   MODIFY `id_foto` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `karyawan`
+-- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
   MODIFY `id_karyawan` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `laporan`
+-- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
   MODIFY `id_laporan` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66667;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `perjalanan`
+-- AUTO_INCREMENT for table `perjalanan`
 --
 ALTER TABLE `perjalanan`
-  MODIFY `id_perjalanan` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123456801;
+  MODIFY `id_perjalanan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123457;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
