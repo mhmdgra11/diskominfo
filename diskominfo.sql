@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2024 at 09:04 AM
+-- Generation Time: Oct 04, 2024 at 03:53 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -105,6 +105,17 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `penugasan`
+--
+
+CREATE TABLE `penugasan` (
+  `id_user` int(11) NOT NULL,
+  `id_perjalanan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `perjalanan`
 --
 
@@ -184,6 +195,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `penugasan`
+--
+ALTER TABLE `penugasan`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- Indexes for table `perjalanan`
 --
 ALTER TABLE `perjalanan`
@@ -222,6 +239,12 @@ ALTER TABLE `laporan`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `penugasan`
+--
+ALTER TABLE `penugasan`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `perjalanan`
