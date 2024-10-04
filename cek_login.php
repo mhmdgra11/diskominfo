@@ -30,10 +30,10 @@ if ($cek > 0) {
         header("location:index.php");
 
         // cek jika user login sebagai pegawai
-    } else if ($data['level'] == "user") {
+    } else if ($data['level'] == "pegawai") {
         // buat session login dan username
         $_SESSION['id_user'] = $id_user;
-        $_SESSION['level'] = "user";
+        $_SESSION['level'] = "pegawai";
         // alihkan ke halaman dashboard pegawai
         header("location:index.php");
     } else {
