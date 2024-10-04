@@ -6,8 +6,8 @@ Kelompok : diskominfo
 
 ## Pengguna
 
-1. Admin
-2. User
+1. admin
+2. pegawai
 
 
 ## Menu
@@ -16,39 +16,96 @@ Kelompok : diskominfo
 
 - login
 - Data Karyawan
-- dst.
+- Perjalanan
+- Laporan
+- Logout
 
-**Untuk Pengguna 2()**
+**Untuk Pengguna 2(Pegawai)**
 
-- menu
-- menu
-- dst.
-
-**Dst**
+- Login
+- Perjalanan
+- Laporan
+- Logout
 
 ## Fitur
 
-**Untuk Pengguna 1()**
+**Untuk Pengguna 1(Admin)**
 
-A. menu 1
+1. Menu Login
 
-- NamaFitur/File 1.1.1 (V)
-- NamaFitur/File 1.1.2 (P)
-- Dst.
+-  login.php (V)
+- cek login.php (P)
 
-A. menu 2
+2. Menu Data Karyawan
 
-- NamaFitur/File 1.2.1
-- NamaFitur/File 1.2.2 (P)
-- Dst.
+- tampil-data-karyawan.php (V)
+- form-tambah.php (V)
+- proses-simpan.php (P)
+- detail.php (V)
+- form-ubah.php(V)
+- proses-ubah.php (P)
+- proses-hapus (P)
 
-**Untuk Pengguna 2()**
+3. Menu Perjalanan
 
-A. menu 1
+- perjalanan/detail.php (V)
+- perjalanan/edit.php (V)
+- perjalanan/hapus.php(P)
+- perjalanan/kirim.php (V)
+- perjalanan/print-detail.php(V)
+- perjalanan/simpan.php (P)
+- perjalanan/tambah.php (V)
+- perjalanan/tampil.php (V)
+- perjalanan/update.php (P)
+- perjalanan/tambah-Penugasan.php (V)
+- perjalanan/simpan-penugasan.php (P)
 
-- NamaFitur/File 2.1.1
-- NamaFitur/File 2.1.2
-- Dst.
+4. Menu Laporan
+
+- laporan/tambah.php (V)
+- laporan/simpan.php (P)
+- laporan/ubah.php (V)
+- laporan/update.php (P)
+- laporan/hapus.php (P)
+
+5. Menu Logout
+
+-  logout.php (P)
+
+
+**Untuk Pengguna 2(Pegawai)**
+
+1. Menu Login
+
+-  login.php (V)
+- cek login.php (P)
+
+2. Menu Perjalanan
+
+- perjalanan/detail.php (V)
+- perjalanan/edit.php (V)
+- perjalanan/hapus.php(P)
+- perjalanan/kirim.php (V)
+- perjalanan/print-detail.php(V)
+- perjalanan/simpan.php (P)
+- perjalanan/tambah.php (V)
+- perjalanan/tampil.php (V)
+- perjalanan/update.php (P)
+- perjalanan/tambah-Penugasan.php (V)
+- perjalanan/simpan-penugasan.php (P)
+
+3. Menu Laporan
+
+- laporan/tambah.php (V)
+- laporan/simpan.php (P)
+- laporan/ubah.php (V)
+- laporan/update.php (P)
+- laporan/hapus.php (P)
+
+4. Menu Logout
+
+-  logout.php (P)
+
 
 ### Keterangan
 
