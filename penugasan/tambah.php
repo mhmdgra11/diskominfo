@@ -22,7 +22,7 @@ $id_penugasan  = $_GET['id'];
               <select class="form-control" name="id_perjalanan" placeholder="Pilih" required>
 
                 <?php
-                $query = "SELECT * FROM perjalanan";
+                $query = "SELECT * FROM perjalanan WHERE id_perjalanan = $id_penugasan";
                 $result = mysqli_query($db, $query);
                 foreach ($result as $data) {
                 ?>
