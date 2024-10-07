@@ -34,8 +34,8 @@
             <li class="list-group-item"> LAMPIRAN : <?php echo $lampiran; ?></li>
             <li class="list-group-item"> YANG DITUGASKAN : 
             <?php
-      $query = "SELECT penugasan.*, user.*  
-                                FROM penugasan JOIN user ON user.id_user = penugasan.id_user WHERE id_perjalanan = $id_perjalanan";
+      $query = "SELECT penugasan.*, user.username FROM penugasan JOIN user ON user.id_user = penugasan.id_user WHERE id_perjalanan = $id_perjalanan";
+  
       $result = mysqli_query($db, $query); 
       
       foreach ($result as $data) {

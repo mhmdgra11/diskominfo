@@ -2,14 +2,13 @@
 include 'config/database.php';
 
 $id_perjalanan = $_POST['id_perjalanan'];
-                $tempat  = $data['tempat'];
-                $tanggal   = $data['tanggal'];
-                $waktu   = $data['waktu'];
-                $keterangan   = $data['keterangan'];
-                $telp     = $data['telp'];
-                $email    = $data['email'];
-                $status    = $data['status'];
-                $lampiran    = $data['lampiran'];
+                $tempat  = $_POST['tempat'];
+                $tanggal   = $_POST['tanggal'];
+                $waktu   = $_POST['waktu'];
+                $jenis_tugas   = $_POST['jenis_tugas'];
+                $keterangan   = $_POST['keterangan'];
+                $status    = $_POST['status'];
+                $lampiran    = $_POST['lampiran'];
 
 $rand = rand();
 $ekstensi =  array('png', 'jpg', 'jpeg', 'pdf');
@@ -23,7 +22,7 @@ if (!in_array($ext, $ekstensi)) {
     if ($ukuran < 1044070) {
         $xx = $rand . '_' . $filename;
         move_uploaded_file($_FILES['lampiran']['tmp_name'], 'perjalanan/gambar/' . $rand . '_' . $filename);
-        mysqli_query($db, "INSERT INTO perjalanan VALUES('$id_perjalanan','$nama','$tempat','$tanggal','$waktu','$keterangan','$telp','$email','$waktu_tgl','$status','$xx')");
+        mysqli_query($db, "INSERT INTO perjalanan VALUES('$id_perjalanan','$tempat','$tanggal','$waktu','$jenis_tugas','$keterangan','$status','$xx')");
         header("location:?page=perjalanan-tampil&alert=2");
     } else {
         header("location:?page=perjalanan-tampil&alert=1");

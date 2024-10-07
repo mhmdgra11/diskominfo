@@ -40,14 +40,6 @@
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">surat tugas</label>
-              <div class="col-sm-3">
-                <input type="text" class="form-control" name="surat_tugas" autocomplete="off" required>
-              </div>
-            </div>
-
-
-            <div class="form-group">
               <label class="col-sm-2 control-label">Keterangan</label>
               <div class="col-sm-3">
                 <input type="text" class="form-control" name="keterangan" required>
@@ -57,12 +49,24 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Jenis Tugas</label>
               <div class="col-sm-3">
-                <select class="form-control" name="jenis_tugas" placeholder="Pilih level" required>
+                <select class="form-control" name="jenis_tugas" placeholder="Pilih Tugas" required>
                   <option value=""></option>
                   <option value="admin">giat_liputan</option>
                   <option value="pegawai">seminar</option>
                   <option value="pegawai">sosialisasi</option>
                   <option value="pegawai">rapat</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Status</label>
+              <div class="col-sm-3">
+                <select class="form-control" name="status" placeholder="Pilih status" required>
+                  <option value=""></option>
+                  <option value="selesai">Selesai</option>
+                  <option value="delay">Delay</option>
+                  <option value="batal">Batal</option>
                 </select>
               </div>
             </div>
