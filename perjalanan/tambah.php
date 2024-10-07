@@ -11,9 +11,16 @@
         <div class="panel-body">
           <form class="form-horizontal" method="POST" action="perjalanan/simpan.php">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Tempat</label>
+              <label class="col-sm-2 control-label">ID Perjalanan</label>
               <div class="col-sm-2">
-                <input type="text" class="form-control" name="tempat" maxlength="255" autocomplete="off" required>
+                <input type="text" class="form-control" name="id_perjalanan" maxlength="255" autocomplete="off" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Tempat</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" name="tempat" autocomplete="off" required>
               </div>
             </div>
 
