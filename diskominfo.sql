@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 07:01 AM
+-- Generation Time: Oct 07, 2024 at 07:52 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -105,6 +105,25 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `penugasan`
+--
+
+CREATE TABLE `penugasan` (
+  `id_penugasan` bigint(16) NOT NULL,
+  `id_perjalanan` int(20) NOT NULL,
+  `id_user` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `penugasan`
+--
+
+INSERT INTO `penugasan` (`id_penugasan`, `id_perjalanan`, `id_user`) VALUES
+(1, 456, 10);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `perjalanan`
 --
 
@@ -124,6 +143,7 @@ CREATE TABLE `perjalanan` (
 --
 
 INSERT INTO `perjalanan` (`id_perjalanan`, `tempat`, `tanggal`, `waktu`, `jenis_tugas`, `keterangan`, `status`, `lampiran`) VALUES
+(456, 'al mamun', '2024-10-07', '16:43:00', 'admin', 'rapat SKPD pendapatan daerah', 'selesai', '1393476171_IMG_0157_11zon.jpg'),
 (123456, 'Alun Alun Sumedang', '2024-10-04', '10:59:57', 'giat_liputan', 'West Java Smiling Festival', '', '');
 
 -- --------------------------------------------------------
@@ -184,6 +204,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `penugasan`
+--
+ALTER TABLE `penugasan`
+  ADD PRIMARY KEY (`id_penugasan`);
+
+--
 -- Indexes for table `perjalanan`
 --
 ALTER TABLE `perjalanan`
@@ -222,6 +248,12 @@ ALTER TABLE `laporan`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `penugasan`
+--
+ALTER TABLE `penugasan`
+  MODIFY `id_penugasan` bigint(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `perjalanan`
