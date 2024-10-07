@@ -9,7 +9,8 @@
 
       <div class="panel panel-default">
         <div class="panel-body">
-          <form class="form-horizontal" method="POST" action="perjalanan/simpan.php">
+        <form class="form-horizontal" method="POST" action="?page=perjalanan-simpan" enctype="multipart/form-data">
+
             <div class="form-group">
               <label class="col-sm-2 control-label">ID Perjalanan</label>
               <div class="col-sm-2">
@@ -34,7 +35,7 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Waktu</label>
               <div class="col-sm-3">
-                <input type="time" class="form-control" name="tanggal" autocomplete="off" required>
+                <input type="time" class="form-control" name="waktu" autocomplete="off" required>
               </div>
             </div>
 
