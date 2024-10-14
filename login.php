@@ -18,7 +18,7 @@
     ?>
 
     <div class="kotak_login">
-        <center><img src="assets/img/favicon.png"></center>
+        <center><img src="assets/img/logo.png"width=200 height=200></center>
         <p class="tulisan_login"> WELCOME TO <b>ASINPEDAS</b></p>
         <hr>
 

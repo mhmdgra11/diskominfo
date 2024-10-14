@@ -12,7 +12,7 @@ require_once "config/database.php";
   <title>ASINPEDAS</title>
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <link rel="shortcut icon" href="assets/img/logoo.png">
 
   <!-- Bootstrap -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">

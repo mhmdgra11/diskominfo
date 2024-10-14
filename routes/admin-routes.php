@@ -42,6 +42,9 @@ elseif ($_GET['page'] == 'tambah-penugasan') {
     include "penugasan/simpan.php";
 } elseif ($_GET['page'] == 'hapus-penugasan') {
     include "penugasan/php";
-}else if ($_GET['page'] == 'tampil-laporan') {
+}
+
+// laporan
+else if ($_GET['page'] == 'tampil-laporan') {
     include "laporan/tampil-laporan.php";
 }
